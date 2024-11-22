@@ -1,0 +1,23 @@
+.header {
+    background-color: aqua;
+}
+
+.contentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    margin: 0 auto;
+    padding: 7px 15px;
+    border-radius: 5px;
+    background-color: rgb(67, 241, 67);
+    display: block;
+    color: black;
+}
+
+.all {
+text-align: center;
+margin-top: 10px;
+}
