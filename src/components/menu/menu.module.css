@@ -21,3 +21,45 @@
 text-align: center;
 margin-top: 10px;
 }
+
+.modalBerry {
+    position: absolute;
+    top: 50%; /* Центр по вертикали */
+    left: 50%; /* Центр по горизонтали */
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 90%;
+    /* top: 10; */
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 15px;
+}
+
+.formBerry {
+    border: 1px solid black;
+    height: 90%;
+    padding: 10px 15px;
+    > input {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 12px;
+    }
+    > textarea {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.saveButtonContainer {}
+
+.saveButton {
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 7px 10px;
+    width: 100%;
+    border-radius: 7px;
+    background-color: greenyellow;
+    color: black;
+    font-size: 16px;
+}

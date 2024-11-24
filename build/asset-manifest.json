@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/flora/static/css/main.f855e6bc.css",
-    "main.js": "/flora/static/js/main.db1d1229.js",
+    "main.css": "/flora/static/css/main.6101fbe5.css",
+    "main.js": "/flora/static/js/main.8d68fe68.js",
     "static/js/453.81838dc5.chunk.js": "/flora/static/js/453.81838dc5.chunk.js",
-    "static/media/logo.svg": "/flora/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/flora/index.html",
-    "main.f855e6bc.css.map": "/flora/static/css/main.f855e6bc.css.map",
-    "main.db1d1229.js.map": "/flora/static/js/main.db1d1229.js.map",
+    "main.6101fbe5.css.map": "/flora/static/css/main.6101fbe5.css.map",
+    "main.8d68fe68.js.map": "/flora/static/js/main.8d68fe68.js.map",
     "453.81838dc5.chunk.js.map": "/flora/static/js/453.81838dc5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.db1d1229.js"
+    "static/css/main.6101fbe5.css",
+    "static/js/main.8d68fe68.js"
   ]
 }

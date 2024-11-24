@@ -1,11 +1,14 @@
+import { useEffect, useState } from "react";
 import s from "./Berry.module.css";
+import Button from "../../GeneralComponents/Button";
 interface IBerryList {
     title: string;
     order: number;
     kwitne: number;
-    Rc: number;
+    rc: number;
     workers: number;
     pinets: number;
+    comment: string;
 }
 
 type forOne = number | string;
@@ -81,24 +84,45 @@ function CalcBoxes(order: number, pinets: number, workers: number, point: string
     return 2;
 }
 
-export default function BerryList(
-    {title, order, kwitne, Rc, workers, pinets}
-    : IBerryList) {
+export default function BerryList() {
+        const [list, setList] = useState<IBerryList[]>([]);
+        useEffect(() => {
+          if(localStorage.getItem('berryList')) {
+            const getList = JSON.parse(localStorage.getItem('berryList')!);
+            setList([...getList]);
+          }
+        
+          return () => {}
+        }, [])
+        
+        const resetList = () => {
+            localStorage.clear();
+        }
+
     return (
         <div className="container">
             <ul>
-                <li className={s.title}>{title}</li>
+                {list.length > 0 && list.map(({
+                    title, order, pinets, workers, kwitne, rc, comment
+                }) => {
+                    return <>
+                    <li className={s.title}>{title}</li>
                 <li className={s.item}>
                     <p>Order: {order}</p>
-                    <p>F: {CalcBoxes(order, pinets, workers, "flora", kwitne, Rc )}</p>
-                    <p>K: {CalcBoxes(order, pinets, workers, "kwitne", kwitne, Rc )}</p>
-                    <p>RC: {CalcBoxes(order, pinets, workers, "rc", kwitne, Rc )}</p>
-                    <p>Lok: {CalcBoxes(order, pinets, workers, "local", kwitne, Rc )}</p>
+                    <p>F: {CalcBoxes(order, pinets, workers, "flora", kwitne, rc )}</p>
+                    <p>K: {CalcBoxes(order, pinets, workers, "kwitne", kwitne, rc )}</p>
+                    <p>RC: {CalcBoxes(order, pinets, workers, "rc", kwitne, rc )}</p>
+                    <p>Lok: {CalcBoxes(order, pinets, workers, "local", kwitne, rc )}</p>
                     <p>Ф: {workers}</p>
-                    <p>One: {CalcBoxes(order, pinets, workers, "oneWorker", kwitne, Rc )}</p>
+                    <p>One: {CalcBoxes(order, pinets, workers, "oneWorker", kwitne, rc )}</p>
                     <p>Pinets: {pinets}</p>
+                    <p>{comment}</p>
                 </li>
+                    </>
+                })}
+                
             </ul>
+            <Button text="Reset" func={resetList} styleB="" styleContainerButton="" type="button" />
         </div>
     )
 };

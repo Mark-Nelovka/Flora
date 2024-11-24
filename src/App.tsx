@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <Menu />
-      <BerryList title='Малина 125' order={1749} kwitne={121} Rc={0} workers={4} pinets={12} />
+      <BerryList />
     </div>
   );
 }
